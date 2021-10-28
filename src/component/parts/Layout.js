@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children, title }) {
   return (
-    <div className="relative" style={{ paddingBottom: 60 }}>
+    <div className="relative pb-16">
       <div className="flex justify-center">
         <img src="/assets/flower-1.png" width={285} alt="flower" />
       </div>

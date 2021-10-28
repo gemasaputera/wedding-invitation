@@ -6,7 +6,6 @@ export default function MenuItem({ icon, title, url }) {
   const Router = useRouter();
   const handleClick = () => {
     Router.push(url);
-    console.log(`url`, url);
   };
   return (
     <button

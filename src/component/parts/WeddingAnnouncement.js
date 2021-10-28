@@ -2,21 +2,14 @@ import React from "react";
 
 export default function WeddingAnnouncement() {
   return (
-    <div
-      className="container mx-auto flex flex-col items-center"
-      style={{ marginTop: "5rem" }}
-    >
-      <p className="font-serif text-2xl	" style={{ marginBottom: 5 }}>
-        Iga & Gema
-      </p>
-      <p className="font-serif text-2xl	" style={{ marginBottom: 5 }}>
-        Wedding Announcement
-      </p>
-      <p style={{ fontSize: 12, color: "#969696", marginBottom: 20 }}>
+    <div className="container mx-auto flex flex-col items-center mt-20">
+      <p className="font-serif text-2xl	mb-1">Iga & Gema</p>
+      <p className="font-serif text-2xl	mb-1">Wedding Announcement</p>
+      <p className="text-xs text-gray-400 mb-11">
         Original build by{" "}
         <span>
           <a
-            style={{ cursor: "pointer", textDecoration: "underline" }}
+            className="cursor-pointer underline hover:text-black"
             href="https://www.linkedin.com/in/gemasaputera/"
             target="_blank"
           >
@@ -25,11 +18,7 @@ export default function WeddingAnnouncement() {
         </span>
       </p>
       <div>
-        <img
-          src="/assets/flower-2.png"
-          alt=""
-          style={{ marginBottom: "-1.5rem" }}
-        />
+        <img className="mb-6" src="/assets/flower-2.png" alt="" />
       </div>
     </div>
   );
