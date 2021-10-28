@@ -17,9 +17,9 @@ export default function PersonCard({ reverse, data }) {
         >
           {data.social.map((item, i) => {
             return (
-              <div className="" key={item.name}>
+              <a href={item.url} target="_blank" key={item.name}>
                 <img src={item.icon} alt={item.name} width={20} height={20} />
-              </div>
+              </a>
             );
           })}
         </div>
@@ -31,7 +31,10 @@ export default function PersonCard({ reverse, data }) {
           paddingRight: reverse ? 10 : 0,
         }}
       >
-        <p className="text-lg" style={{ fontWeight: "600" }}>
+        <p
+          className="text-lg"
+          style={{ fontWeight: "600", textAlign: reverse ? "right" : "left" }}
+        >
           {data.name}
         </p>
         <p
