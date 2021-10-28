@@ -1,0 +1,8 @@
+.container {
+  background: #fbbda2;
+  position: fixed;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  justify-content: space-around;
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Iga Utami Audhina",
+    "img": "/images/profile-1.png",
+    "father": "H. Deni Hidayat",
+    "mother": "Sri Hartuti",
+    "gender": "P",
+    "social": [
+      {
+        "name": "Instagram",
+        "url": "",
+        "icon": "/icons/ic_instagram.svg"
+      },
+      {
+        "name": "Facebook",
+        "url": "",
+        "icon": "/icons/ic_fb.svg"
+      },
+      {
+        "name": "Twitter",
+        "url": "",
+        "icon": "/icons/ic_twitter.svg"
+      }
+    ]
+  },
+  {
+    "name": "Gema Saputera",
+    "img": "/images/profile-2.png",
+    "father": "Widya Kuntjoro",
+    "mother": "Dra. Mustafawiyah",
+    "gender": "L",
+    "social": [
+      {
+        "name": "Instagram",
+        "url": "",
+        "icon": "/icons/ic_instagram.svg"
+      },
+      {
+        "name": "Facebook",
+        "url": "",
+        "icon": "/icons/ic_fb.svg"
+      },
+      {
+        "name": "Twitter",
+        "url": "",
+        "icon": "/icons/ic_twitter.svg"
+      }
+    ]
+  }
+]
