@@ -31,7 +31,7 @@ export default function Home() {
               <p className="font-serif text-3xl text-white">Gema</p>
             </Fade>
           </div>
-          <div className="flex justify-center z-20">
+          <div className="flex justify-center mb-8 z-20">
             <Fade top delay={300}>
               <button
                 className="btn btn-primary uppercase mb-8"

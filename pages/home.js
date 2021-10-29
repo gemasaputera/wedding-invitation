@@ -16,7 +16,7 @@ export default function HomeScreen() {
       <Fade top delay={300}>
         <div className="flex flex-col items-center justify-center">
           <p className="font-serif text-4xl mt-2">
-            Iga <span>&</span> Gema
+            Iga <span style={{ fontFamily: "LasminiYahut" }}>&</span> Gema
           </p>
           <p className="font-medium text-center mt-4 text-sm">
             Assalamu’alaikum Warahmatullahi Wabarakaatuh
