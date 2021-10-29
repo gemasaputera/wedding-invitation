@@ -152,7 +152,7 @@ export default function EventScreen() {
           </Fade>
 
           <Fade top delay={600}>
-            <div className="flex justify-center lg:w-3/5 mb-8 mx-auto">
+            <div className="flex justify-center md:w-3/5 mb-8 mx-auto">
               <p className="font-light text-center">
                 Mengikuti anjuran protokol kesehatan COVID-19 Acara pernikahan
                 hanya akan dihadiri oleh pihak keluarga kedua mempelai. Untuk
@@ -162,9 +162,9 @@ export default function EventScreen() {
           </Fade>
 
           <Fade top delay={700}>
-            <p className="text-center">Protokol</p>
+            <p className="font-semibold text-center">Protokol</p>
 
-            <div className="flex flex-col lg:flex-row justify-center mb-4">
+            <div className="flex flex-col lg:flex-row justify-center items-center mb-4">
               <div>
                 <img src="/assets/protokol-1.png" alt="" />
               </div>

@@ -21,7 +21,7 @@ export default function HomeScreen() {
           <p className="font-serif text-4xl mt-2">
             Iga <span style={{ fontFamily: "LasminiYahut" }}>&</span> Gema
           </p>
-          <p className="font-medium text-center mt-4 text-sm">
+          <p className="font-bold text-center mt-4 text-sm">
             Assalamu’alaikum Warahmatullahi Wabarakaatuh
           </p>
           <p className="font-light text-center mt-2 text-sm">
@@ -30,7 +30,7 @@ export default function HomeScreen() {
           </p>
         </div>
       </Fade>
-      <section className="mt-12 xl:flex xl:flex-row xl:justify-evenly">
+      <section className="mt-12 md:flex md:flex-row md:justify-evenly">
         {Couples.map((person, i) => {
           return (
             <Fade left delay={1000 * i}>
