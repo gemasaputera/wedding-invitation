@@ -62,3 +62,7 @@ body {
 .main {
   @apply container mx-auto;
 }
+
+.primary-color {
+  color: #ef6b59;
+}

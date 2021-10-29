@@ -2,7 +2,11 @@ import React from "react";
 
 export default function PersonCard({ reverse, data }) {
   return (
-    <div className={`flex ${reverse ? "flex-row-reverse" : ""} mb-3`}>
+    <div
+      className={`flex ${
+        reverse ? "flex-row-reverse" : ""
+      } mb-3 bg-white p-4 rounded-lg drop-shadow-sm hover:drop-shadow-lg`}
+    >
       <div>
         <img src={data.img} alt={data.name} height={100} width={100} />
         <div className="flex justify-evenly mt-3">

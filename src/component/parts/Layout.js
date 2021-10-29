@@ -12,7 +12,11 @@ export default function Layout({ children, title }) {
         </div>
         <div className={`${styles.container} flex flex-col items-center`}>
           <Fade top delay={300}>
-            <p className={`${styles.title} uppercase`}>{title}</p>
+            <p
+              className={`${styles.title} uppercase xl:mt-10 xl:text-3xl!important`}
+            >
+              {title}
+            </p>
           </Fade>
           <section className="container mx-auto">{children}</section>
         </div>

@@ -1,12 +1,15 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Fade from "react-reveal/Fade";
 import Layout from "../src/component/parts/Layout";
 import Couples from "../src/json/Couples.json";
 import PersonCard from "../src/component/parts/PersonCard";
 import WeddingAnnouncement from "../src/component/parts/WeddingAnnouncement";
+import { Router } from "next/router";
 
 export default function HomeScreen() {
+  const Router = useRouter();
   return (
     <Layout title="the wedding of">
       <Head>
@@ -27,10 +30,10 @@ export default function HomeScreen() {
           </p>
         </div>
       </Fade>
-      <section className="mt-12">
+      <section className="mt-12 xl:flex xl:flex-row xl:justify-evenly">
         {Couples.map((person, i) => {
           return (
-            <Fade left delay={1000}>
+            <Fade left delay={1000 * i}>
               <PersonCard
                 data={person}
                 key={`person-${i}`}
@@ -40,6 +43,16 @@ export default function HomeScreen() {
           );
         })}
       </section>
+      <div className="flex justify-center my-10">
+        <Fade bottom delay={500}>
+          <button
+            className="btn btn-primary"
+            onClick={() => Router.push("/event")}
+          >
+            Detail Acara
+          </button>
+        </Fade>
+      </div>
       <Fade bottom delay={500}>
         <WeddingAnnouncement />
       </Fade>
