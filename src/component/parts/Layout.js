@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import Fade from "react-reveal/Fade";
 import styles from "../../../styles/Layout.module.css";
 import Footer from "./Footer";
@@ -7,20 +6,6 @@ import Footer from "./Footer";
 export default function Layout({ children, title }) {
   return (
     <>
-      <Head>
-        <link
-          rel="preload"
-          href="/fonts/BalletHarmony.ttf"
-          as="font"
-          crossOrigin=""
-        />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          as="font"
-          crossOrigin=""
-        />
-      </Head>
       <div className="relative pb-16">
         <div className="flex justify-center">
           <img src="/assets/flower-1.png" width={285} alt="flower" />

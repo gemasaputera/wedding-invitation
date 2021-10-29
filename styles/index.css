@@ -6,7 +6,7 @@
   src: local('"BalletHarmony"'), url(/fonts/BalletHarmony.ttf) format("ttf");
 } */
 @font-face {
-  font-family: '"BalletHarmony"';
+  font-family: "BalletHarmony";
   src: url("/fonts/BalletHarmony.ttf");
   font-style: normal;
   font-weight: 400;
