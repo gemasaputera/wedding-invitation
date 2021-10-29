@@ -12,28 +12,30 @@ export default function Home() {
   };
   const OpeningScreen = () => {
     return (
-      <div className="relative flex flex-col justify-between h-screen p-8 z-50 overflow-hidden">
-        <div className="absolute bg-black bg-opacity-40 inset-0 z-10" />
-        <div className="background-cover" />
-        <div className="flex flex-col items-center justify-center z-20">
-          <Fade bottom>
-            <p className="font-serif text-2xl mt-8 mb-8 text-white">
-              Wedding Announcement
-            </p>
-            <p className="font-serif text-3xl text-white">Iga</p>
-            <p className="font-serif text-2xl text-white">&</p>
-            <p className="font-serif text-3xl text-white">Gema</p>
-          </Fade>
-        </div>
-        <div className="flex justify-center container z-20">
-          <Fade top delay={300}>
-            <button
-              className="btn btn-primary uppercase mb-8"
-              onClick={handleOpen}
-            >
-              buka undangan
-            </button>
-          </Fade>
+      <div className="fixed inset-0">
+        <div className="relative flex flex-col justify-between h-screen p-8 z-50 overflow-hidden">
+          <div className="absolute bg-black bg-opacity-40 inset-0 z-10" />
+          <div className="background-cover" />
+          <div className="flex flex-col items-center justify-center z-20">
+            <Fade bottom>
+              <p className="font-serif text-2xl mt-8 mb-8 text-white">
+                Wedding Announcement
+              </p>
+              <p className="font-serif text-3xl text-white">Iga</p>
+              <p className="font-serif text-2xl text-white">&</p>
+              <p className="font-serif text-3xl text-white">Gema</p>
+            </Fade>
+          </div>
+          <div className="flex justify-center container z-20">
+            <Fade top delay={300}>
+              <button
+                className="btn btn-primary uppercase mb-8"
+                onClick={handleOpen}
+              >
+                buka undangan
+              </button>
+            </Fade>
+          </div>
         </div>
       </div>
     );
