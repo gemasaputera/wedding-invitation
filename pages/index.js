@@ -12,7 +12,7 @@ export default function Home() {
   };
   const OpeningScreen = () => {
     return (
-      <section className="relative flex flex-col justify-between h-screen p-8 z-50 overflow-hidden">
+      <div className="relative flex flex-col justify-between h-screen p-8 z-50 overflow-hidden">
         <div className="absolute bg-black bg-opacity-40 inset-0 z-10" />
         <div className="background-cover" />
         <div className="flex flex-col items-center justify-center z-20">
@@ -35,7 +35,7 @@ export default function Home() {
             </button>
           </Fade>
         </div>
-      </section>
+      </div>
     );
   };
   return (

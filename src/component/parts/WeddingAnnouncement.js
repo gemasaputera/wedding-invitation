@@ -18,7 +18,7 @@ export default function WeddingAnnouncement() {
         </span>
       </p>
       <div>
-        <img className="mb-6" src="/assets/flower-2.png" alt="" />
+        <img className="mb-3" src="/assets/flower-2.png" alt="" />
       </div>
     </div>
   );
