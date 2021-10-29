@@ -10,8 +10,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Poppins", "Helvetica", "sans-serif"],
-        serif: ['"Ballet Harmony"', "Times New Roman", "sans-serif"],
-        custom: ["Poppins", "Ballet Harmony", "sans-serif"],
+        serif: ['"BalletHarmony"', "Times New Roman", "sans-serif"],
+        custom: ["Poppins", "BalletHarmony", "sans-serif"],
       },
     },
   },

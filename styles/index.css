@@ -2,11 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 /* @font-face {
-  font-family: '"Ballet Harmony"';
-  src: local('"Ballet Harmony"'), url(/fonts/Ballet\ Harmony.ttf) format("ttf");
+  font-family: '"BalletHarmony"';
+  src: local('"BalletHarmony"'), url(/fonts/Ballet\ Harmony.ttf) format("ttf");
 } */
 @font-face {
-  font-family: '"Ballet Harmony"';
+  font-family: '"BalletHarmony"';
   src: url("/fonts/Ballet\ Harmony.ttf");
   font-style: normal;
   font-weight: 400;
