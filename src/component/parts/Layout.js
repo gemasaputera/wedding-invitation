@@ -10,7 +10,7 @@ export default function Layout({ children, title }) {
       <Head>
         <link
           rel="preload"
-          href="/fonts/Ballet\ Harmony.ttf"
+          href="/fonts/BalletHarmony.ttf"
           as="font"
           crossOrigin=""
         />
