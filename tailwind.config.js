@@ -11,7 +11,7 @@ module.exports = {
       fontFamily: {
         sans: ["Poppins", "Helvetica", "sans-serif"],
         serif: ["BalletHarmony", "Times New Roman", "sans-serif"],
-        custom: ["Poppins", "BalletHarmony", "sans-serif"],
+        custom: ["LasminiYahut", "BalletHarmony", "sans-serif"],
       },
     },
   },

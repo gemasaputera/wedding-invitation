@@ -22,7 +22,12 @@ export default function Home() {
                 Wedding Announcement
               </p>
               <p className="font-serif text-3xl text-white">Iga</p>
-              <p className="font-serif text-2xl text-white">&</p>
+              <p
+                className="text-2xl text-white"
+                style={{ fontFamily: "LasminiYahut" }}
+              >
+                &
+              </p>
               <p className="font-serif text-3xl text-white">Gema</p>
             </Fade>
           </div>
