@@ -33,12 +33,8 @@ export default function HomeScreen() {
       <section className="mt-12 md:flex md:flex-row md:justify-evenly">
         {Couples.map((person, i) => {
           return (
-            <Fade left delay={1000 * i}>
-              <PersonCard
-                data={person}
-                key={`person-${i}`}
-                reverse={person.gender === "P"}
-              />
+            <Fade left delay={1000 * i} key={`person-${i}`}>
+              <PersonCard data={person} reverse={person.gender === "P"} />
             </Fade>
           );
         })}

@@ -5,14 +5,33 @@ import Layout from "../src/component/parts/Layout";
 import WeddingAnnouncement from "../src/component/parts/WeddingAnnouncement";
 import Dialog from "../src/component/parts/Dialog";
 import dataBank from "../src/json/BankList.json";
+import { db } from "../src/config/Firebase";
+import {
+  collection,
+  getDocs,
+  addDoc,
+  // updateDoc,
+  // deleteDoc,
+  // doc,
+} from "firebase/firestore";
 
 export default function WishesScreen() {
   const [form, setForm] = useState({
     name: null,
-    message: null,
+    text: null,
   });
   const [disabled, setDisabled] = useState(true);
   const [open, setOpen] = useState(false);
+  const [wishes, setWishes] = useState([]);
+
+  useEffect(() => {
+    const getWishes = async () => {
+      const data = await getDocs(collection(db, "messages"));
+      setWishes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+
+    getWishes();
+  }, [wishes]);
 
   useEffect(() => {
     const values = Object.values(form);
@@ -23,16 +42,21 @@ export default function WishesScreen() {
     setOpen(!open);
   };
 
-  const handleChange = (e, name) => {
+  const handleChange = (e) => {
+    const key = e.target.id;
     const value = e.target.value;
-    setForm({ ...form, [name]: value });
+    setForm({ ...form, [key]: value });
   };
 
-  const handleSubmit = () => {
-    console.log(`form`, { ...form, date: new Date() });
+  const handleSubmit = async () => {
+    await addDoc(collection(db, "messages"), { ...form, date: new Date() });
+    setForm({
+      name: null,
+      text: null,
+    });
   };
 
-  const ItemWishes = () => {
+  const ItemWishes = ({ data }) => {
     return (
       <div className="flex mb-2">
         <div>
@@ -40,15 +64,12 @@ export default function WishesScreen() {
         </div>
         <div className="flex flex-col flex-1 ml-2">
           <p className="font-semibold" style={{ fontSize: 14 }}>
-            Denni Sumargo
+            {data.name}
           </p>
           <p className="text-gray-400 mb-2" style={{ fontSize: 10 }}>
             11 Hours ago
           </p>
-          <p style={{ fontSize: 12 }}>
-            Happy wedding, Semoga menjadi keluarga yg bahagia, langgeng selalu
-            ya :)
-          </p>
+          <p style={{ fontSize: 12 }}>{data.text}</p>
         </div>
       </div>
     );
@@ -147,10 +168,12 @@ export default function WishesScreen() {
               </label>
               <input
                 name="name"
+                id="name"
                 type="text"
+                value={form.name}
                 className="bg-white rounded-lg p-4"
                 placeholder="Enter your name..."
-                onChange={(e) => handleChange(e, "name")}
+                onChange={handleChange}
               />
             </div>
           </Fade>
@@ -160,11 +183,13 @@ export default function WishesScreen() {
                 your message <span className="text-red-600">*</span>
               </label>
               <textarea
-                name="message"
+                name="text"
+                id="text"
                 className="bg-white rounded-lg p-4"
                 placeholder="Enter your message..."
                 rows="4"
-                onChange={(e) => handleChange(e, "message")}
+                value={form.text}
+                onChange={handleChange}
               />
             </div>
             <div className="w-full">
@@ -191,7 +216,9 @@ export default function WishesScreen() {
           </Fade>
           <Fade delay={1800}>
             <section className="bg-white w-full h-60 p-4 overflow-y-auto overflow-x-hidden">
-              <ItemWishes />
+              {wishes.map((wish, i) => {
+                return <ItemWishes key={i} data={wish} />;
+              })}
             </section>
           </Fade>
         </div>
