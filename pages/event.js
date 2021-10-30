@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Fade from "react-reveal/Fade";
 import Layout from "../src/component/parts/Layout";
+import WeddingAnnouncement from "../src/component/parts/WeddingAnnouncement";
 import dataEvent from "../src/json/DataAkad.json";
 import dataResepsi from "../src/json/DataResepsi.json";
 
