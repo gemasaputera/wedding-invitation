@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import Fade from "react-reveal/Fade";
 import Layout from "../src/component/parts/Layout";
@@ -10,33 +10,41 @@ import {
   collection,
   getDocs,
   addDoc,
-  // updateDoc,
-  // deleteDoc,
+  query,
+  orderBy,
   // doc,
 } from "firebase/firestore";
+import timeconverter from "../src/utils/timecoverter";
 
 export default function WishesScreen() {
   const [form, setForm] = useState({
-    name: null,
-    text: null,
+    name: "",
+    text: "",
   });
   const [disabled, setDisabled] = useState(true);
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [wishes, setWishes] = useState([]);
 
   useEffect(() => {
-    const getWishes = async () => {
-      const data = await getDocs(collection(db, "messages"));
-      setWishes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
     getWishes();
-  }, [wishes]);
+  }, [form]);
 
   useEffect(() => {
     const values = Object.values(form);
-    values.map((item) => (item ? setDisabled(false) : setDisabled(true)));
+    values.map((item) =>
+      item !== "" && item ? setDisabled(false) : setDisabled(true)
+    );
   }, [form]);
+
+  console.log(`form`, form);
+
+  const getWishes = useCallback(async () => {
+    const wishesRef = collection(db, "messages");
+    const q = query(wishesRef, orderBy("date", "desc"));
+    const data = await getDocs(q);
+    setWishes(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+  });
 
   const handleDialog = () => {
     setOpen(!open);
@@ -48,13 +56,23 @@ export default function WishesScreen() {
     setForm({ ...form, [key]: value });
   };
 
-  const handleSubmit = async () => {
-    await addDoc(collection(db, "messages"), { ...form, date: new Date() });
-    setForm({
-      name: null,
-      text: null,
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const send = await addDoc(collection(db, "messages"), {
+      ...form,
+      date: new Date(),
+    });
+    setLoading(true);
+    send.then(() => {
+      setLoading(false);
+      setForm({
+        name: "",
+        text: "",
+      });
     });
   };
+  console.log(`loading`, loading);
 
   const ItemWishes = ({ data }) => {
     return (
@@ -67,7 +85,7 @@ export default function WishesScreen() {
             {data.name}
           </p>
           <p className="text-gray-400 mb-2" style={{ fontSize: 10 }}>
-            11 Hours ago
+            {timeconverter(data.date.seconds)}
           </p>
           <p style={{ fontSize: 12 }}>{data.text}</p>
         </div>
@@ -188,8 +206,8 @@ export default function WishesScreen() {
                 className="bg-white rounded-lg p-4"
                 placeholder="Enter your message..."
                 rows="4"
-                value={form.text}
                 onChange={handleChange}
+                value={form.text}
               />
             </div>
             <div className="w-full">

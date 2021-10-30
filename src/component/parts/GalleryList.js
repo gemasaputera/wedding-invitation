@@ -34,13 +34,12 @@ export default function GalleryList({ data }) {
         );
       })}
       {item && (
-        <Dialog open={open} onClose={() => setOpen(false)}>
-          <img
-            class="w-4/5"
-            src={item.imgUrl}
-            alt={item.id}
-            className="w-full "
-          />
+        <Dialog open={open} onClose={() => setOpen(false)} auto>
+          <div className="flex justify-center w-full max-h-96">
+            <div className="flex justify-center w-full">
+              <img src={item.imgUrl} alt={item.id} className="h-full" />
+            </div>
+          </div>
         </Dialog>
       )}
     </section>
