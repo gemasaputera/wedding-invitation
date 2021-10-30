@@ -3,6 +3,8 @@ import Head from "next/head";
 import Fade from "react-reveal/Fade";
 import Layout from "../src/component/parts/Layout";
 import WeddingAnnouncement from "../src/component/parts/WeddingAnnouncement";
+import Dialog from "../src/component/parts/Dialog";
+import dataBank from "../src/json/BankList.json";
 
 export default function WishesScreen() {
   const [form, setForm] = useState({
@@ -10,11 +12,16 @@ export default function WishesScreen() {
     message: null,
   });
   const [disabled, setDisabled] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const values = Object.values(form);
     values.map((item) => (item ? setDisabled(false) : setDisabled(true)));
   }, [form]);
+
+  const handleDialog = () => {
+    setOpen(!open);
+  };
 
   const handleChange = (e, name) => {
     const value = e.target.value;
@@ -47,6 +54,44 @@ export default function WishesScreen() {
     );
   };
 
+  const renderDialog = () => {
+    return (
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+          {dataBank.map((item, i) => {
+            return (
+              <div
+                key={`bank-${i}`}
+                className="bg-white flex flex-col items-center rounded-lg drop-shadow-lg p-2.5"
+              >
+                <div className="flex justify-between w-full">
+                  <div style={{ width: 100 }}>
+                    <img src={item.logo} alt="" />
+                  </div>
+                  <button
+                    type="button"
+                    className="rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer p-2 flex justify-center items-center"
+                    onClick={() =>
+                      navigator.clipboard.writeText(item.bank_number)
+                    }
+                  >
+                    <p className="capitalize text-xs">copy number</p>
+                  </button>
+                </div>
+                <div className="flex w-full mt-8">
+                  <p className="font-bold">{item.bank_number}</p>
+                </div>
+                <div className="flex w-full mt-2">
+                  <p className="text-gray-500">a.n. {item.owner}</p>
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      </Dialog>
+    );
+  };
+
   return (
     <Layout title="Wishes">
       <Head>
@@ -75,7 +120,11 @@ export default function WishesScreen() {
         </Fade>
         <Fade bottom delay={700}>
           <div className="flex justify-center my-4">
-            <button className="btn btn-primary uppercase">
+            <button
+              className="btn btn-primary uppercase"
+              type="button"
+              onClick={handleDialog}
+            >
               buka amplop digital
             </button>
           </div>
@@ -118,15 +167,20 @@ export default function WishesScreen() {
                 onChange={(e) => handleChange(e, "message")}
               />
             </div>
-            <button
-              className={`btn btn-primary uppercase w-full my-4 ${
-                disabled ? "disabled:opacity-50" : ""
-              }`}
-              disabled={disabled}
-              onClick={handleSubmit}
-            >
-              kirim pesan
-            </button>
+            <div className="w-full">
+              <button
+                type="submit"
+                className={`btn btn-primary uppercase w-full my-4 ${
+                  disabled
+                    ? "disabled:opacity-50 disabled:cursor-not-allowed"
+                    : ""
+                }`}
+                disabled={disabled}
+                onClick={handleSubmit}
+              >
+                kirim pesan
+              </button>
+            </div>
           </Fade>
           <Fade delay={1500}>
             <div className="flex justify-center mt-8 mb-4 w-full">
@@ -143,6 +197,7 @@ export default function WishesScreen() {
         </div>
       </section>
       <WeddingAnnouncement />
+      {renderDialog()}
     </Layout>
   );
 }

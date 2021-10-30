@@ -5,5 +5,5 @@ module.exports = {
     tailwindcss: {},
     autoprefixer: {},
   },
-  safelist: ["html", "body"],
+  // safelist: ["html", "body"],
 };

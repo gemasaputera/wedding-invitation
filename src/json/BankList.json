@@ -1,0 +1,37 @@
+[
+  {
+    "logo": "/images/bank-05.png",
+    "bank_name": "bank central asia",
+    "bank_short": "bca",
+    "bank_number": "6830588009",
+    "owner": "Gema Saputera"
+  },
+  {
+    "logo": "/images/bank-01.png",
+    "bank_name": "mandiri",
+    "bank_short": "mandiri",
+    "bank_number": "1570004346335",
+    "owner": "Gema Saputera"
+  },
+  {
+    "logo": "/images/bank-02.png",
+    "bank_name": "bank negara indonesia",
+    "bank_short": "bni",
+    "bank_number": "0341103780 ",
+    "owner": "Iga Utami Audhina"
+  },
+  {
+    "logo": "/images/bank-03.png",
+    "bank_name": "jenius",
+    "bank_short": "btpn",
+    "bank_number": "$gema09",
+    "owner": "Gema Saputera"
+  },
+  {
+    "logo": "/images/bank-04.png",
+    "bank_name": "hana bank",
+    "bank_short": "hana bank",
+    "bank_number": "10317956590 ",
+    "owner": "Gema Saputera"
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "icon": "ic_calendar_twotone.svg",
+    "text": "21 November 2021",
+    "subtext": "",
+    "type": ""
+  },
+  {
+    "icon": "ic_watch_twotone.svg",
+    "text": "08.00 - 10.00",
+    "subtext": "",
+    "type": "akad"
+  },
+  {
+    "icon": "ic_pin_twotone.svg",
+    "text": "Aula Masjid Al-Muiz Al-Azhar GDC Depok",
+    "subtext": "Jl. Boulevard Grand Depok City No. 123, Kalimulya, Kec. Cilodong, Kota Depok, Jawa Barat",
+    "type": ""
+  }
+]

@@ -1,50 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import Fade from "react-reveal/Fade";
 import Layout from "../src/component/parts/Layout";
-import WeddingAnnouncement from "../src/component/parts/WeddingAnnouncement";
+import dataEvent from "../src/json/DataAkad.json";
+import dataResepsi from "../src/json/DataResepsi.json";
 
 export default function EventScreen() {
-  const [dataEvent] = useState([
-    {
-      icon: "ic_calendar_twotone.svg",
-      text: "21 November 2021",
-      subtext: "",
-      type: "",
-    },
-    {
-      icon: "ic_watch_twotone.svg",
-      text: "08.00 - 10.00",
-      subtext: "",
-      type: "akad",
-    },
-    {
-      icon: "ic_pin_twotone.svg",
-      text: "Aula Masjid Al-Muiz Al-Azhar GDC Depok",
-      subtext:
-        "Jl. Boulevard Grand Depok City No. 123, Kalimulya, Kec. Cilodong, Kota Depok, Jawa Barat",
-      type: "",
-    },
-  ]);
-  const [dataResepsi] = useState([
-    {
-      icon: "ic_calendar_twotone.svg",
-      text: "21 November 2021",
-      subtext: "",
-    },
-    {
-      icon: "ic_watch_twotone.svg",
-      text: "11.00 - 13.00",
-      subtext: "",
-    },
-    {
-      icon: "ic_pin_twotone.svg",
-      text: "Aula Masjid Al-Muiz Al-Azhar GDC Depok",
-      subtext:
-        "Jl. Boulevard Grand Depok City No. 123, Kalimulya, Kec. Cilodong, Kota Depok, Jawa Barat",
-    },
-  ]);
-
   return (
     <Layout title="wedding detail">
       <Head>
