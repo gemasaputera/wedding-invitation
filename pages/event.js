@@ -116,9 +116,9 @@ export default function EventScreen() {
           <Fade top delay={600}>
             <div className="flex justify-center md:w-3/5 mb-8 mx-auto">
               <p className="font-light text-center">
-                Mengikuti anjuran protokol kesehatan COVID-19 Acara pernikahan
-                hanya akan dihadiri oleh pihak keluarga kedua mempelai. Untuk
-                itu, kami mohon doa restu supaya acara berjalan dengan lancar.
+                Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila,
+                Bapak / Ibu / Saudara / i. berkenan hadir untuk memberikan do'a
+                restunya kami ucapkan terimakasih.
               </p>
             </div>
           </Fade>

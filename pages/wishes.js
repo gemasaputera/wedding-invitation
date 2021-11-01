@@ -252,6 +252,13 @@ export default function WishesScreen() {
           </Fade>
           <Fade delay={1800}>
             <section className="bg-white w-full h-60 p-4 overflow-y-auto overflow-x-hidden">
+              {wishes.length === 0 && (
+                <div className="h-full w-full flex justify-center items-center">
+                  <p className="text-gray-400">
+                    Be the first to give a whises!
+                  </p>
+                </div>
+              )}
               {wishes.map((wish, i) => {
                 return <ItemWishes key={i} data={wish} />;
               })}

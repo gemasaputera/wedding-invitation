@@ -12,14 +12,14 @@
         "icon": "/icons/ic_instagram.svg"
       },
       {
-        "name": "Facebook",
-        "url": "",
-        "icon": "/icons/ic_fb.svg"
+        "name": "Youtube",
+        "url": "https://www.youtube.com/c/igaaudhina",
+        "icon": "/icons/ic_yt.svg"
       },
       {
-        "name": "Twitter",
-        "url": "",
-        "icon": "/icons/ic_twitter.svg"
+        "name": "Tiktok",
+        "url": "https://www.tiktok.com/@igaaudhina?",
+        "icon": "/icons/ic_tt.svg"
       }
     ]
   },
@@ -34,16 +34,6 @@
         "name": "Instagram",
         "url": "https://www.instagram.com/gemasaputera",
         "icon": "/icons/ic_instagram.svg"
-      },
-      {
-        "name": "Facebook",
-        "url": "",
-        "icon": "/icons/ic_fb.svg"
-      },
-      {
-        "name": "Twitter",
-        "url": "",
-        "icon": "/icons/ic_twitter.svg"
       }
     ]
   }
