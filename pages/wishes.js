@@ -99,7 +99,7 @@ export default function WishesScreen() {
   const renderDialog = () => {
     return (
       <Dialog open={open} onClose={() => setOpen(false)}>
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 p-1 ">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 p-1">
           <div className="bg-white flex flex-col rounded-lg drop-shadow-lg p-2">
             <div className="flex justify-between items-center">
               <p className="font-semibold">Alamat:</p>

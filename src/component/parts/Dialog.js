@@ -17,7 +17,7 @@ export default function Dialog({ children, open, onClose, auto }) {
       >
         <div
           className="bg-white hover:bg-gray-200 p-1 rounded-full cursor-pointer absolute drop-shadow-md"
-          style={{ top: "-8px", right: "-8px" }}
+          style={{ top: "-8px", right: "-8px", zIndex: "100" }}
           onClick={() => onClose()}
         >
           <svg className="w-4 xl:w-10 h-4 xl:h-10" viewBox="0 0 20 20">
