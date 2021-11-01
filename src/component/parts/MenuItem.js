@@ -10,11 +10,12 @@ export default function MenuItem({ icon, title, url }) {
   return (
     <button
       className={`${styles.menuItem} ${
-        url === Router.pathname ? styles.active : ""
+        url === Router.asPath ? styles.active : ""
       } `}
       onClick={handleClick}
     >
       <img src={icon} alt={title} />
+      <p className="capitalize hidden lg:block">{title}</p>
     </button>
   );
 }

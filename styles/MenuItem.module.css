@@ -8,6 +8,8 @@
   transition: all 0.5s ease-in-out;
   height: 38px;
   width: 38px;
+
+  @apply lg:flex-col lg:rounded lg:w-16 lg:h-auto lg:font-bold;
 }
 
 .menuItem:hover {
@@ -16,4 +18,5 @@
 
 .menuItem.active {
   background-color: #ef6b59;
+  color: #fff;
 }
