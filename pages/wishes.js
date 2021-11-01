@@ -15,6 +15,7 @@ import {
   // doc,
 } from "firebase/firestore";
 import timeconverter from "../src/utils/timecoverter";
+import Spinner from "../src/component/parts/Spinner";
 
 export default function WishesScreen() {
   const [form, setForm] = useState({
@@ -22,6 +23,10 @@ export default function WishesScreen() {
     text: "",
   });
   const [disabled, setDisabled] = useState(true);
+  const [address] =
+    useState(`Komplek Departemen Agama, jalan walisongo 1 Blok A No. 48
+  RT01/RW015, Desa Pabuaran (gang smp muhammadiyah, rumah warung)
+  KAB. BOGOR - BOJONGGEDE JAWA BARAT ID 16921`);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [wishes, setWishes] = useState([]);
@@ -36,8 +41,6 @@ export default function WishesScreen() {
       item !== "" && item ? setDisabled(false) : setDisabled(true)
     );
   }, [form]);
-
-  console.log(`form`, form);
 
   const getWishes = useCallback(async () => {
     const wishesRef = collection(db, "messages");
@@ -56,15 +59,16 @@ export default function WishesScreen() {
     setForm({ ...form, [key]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const send = await addDoc(collection(db, "messages"), {
-      ...form,
-      date: new Date(),
-    });
+    const send = async () =>
+      await addDoc(collection(db, "messages"), {
+        ...form,
+        date: new Date(),
+      });
     setLoading(true);
-    send.then(() => {
+    send().then(() => {
       setLoading(false);
       setForm({
         name: "",
@@ -72,7 +76,6 @@ export default function WishesScreen() {
       });
     });
   };
-  console.log(`loading`, loading);
 
   const ItemWishes = ({ data }) => {
     return (
@@ -96,7 +99,22 @@ export default function WishesScreen() {
   const renderDialog = () => {
     return (
       <Dialog open={open} onClose={() => setOpen(false)}>
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-4 p-1 ">
+          <div className="bg-white flex flex-col rounded-lg drop-shadow-lg p-2">
+            <div className="flex justify-between items-center">
+              <p className="font-semibold">Alamat:</p>
+              <button
+                type="button"
+                className="rounded-lg bg-gray-200 hover:bg-gray-300 cursor-pointer p-2 flex justify-center items-center"
+                onClick={() => navigator.clipboard.writeText(address)}
+              >
+                <p className="capitalize text-xs">copy address</p>
+              </button>
+            </div>
+            <div className="mt-8">
+              <p className="text-sm text-gray-500">{address}</p>
+            </div>
+          </div>
           {dataBank.map((item, i) => {
             return (
               <div
@@ -221,7 +239,7 @@ export default function WishesScreen() {
                 disabled={disabled}
                 onClick={handleSubmit}
               >
-                kirim pesan
+                {loading ? <Spinner /> : "kirim pesan"}
               </button>
             </div>
           </Fade>
