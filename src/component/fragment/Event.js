@@ -1,13 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Fade from "react-reveal/Fade";
 import dataEvent from "../../json/DataAkad.json";
 import dataResepsi from "../../json/DataResepsi.json";
 
 export default function Event() {
+  const calculateTime = () => {
+    let dueDate = new Date("2021-11-21");
+    const differentDate = +dueDate - +new Date();
+    let timeLeft = {};
+
+    if (differentDate > 0) {
+      timeLeft = {
+        days: Math.floor(differentDate / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((differentDate / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((differentDate / 1000 / 60) % 60),
+        seconds: Math.floor((differentDate / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
+  };
+  const [timeLeft, setTimeLeft] = useState(calculateTime());
+
+  useEffect(() => {
+    setTimeout(() => {
+      setTimeLeft(calculateTime());
+    }, 1000);
+  });
+
   return (
     <>
       <Fade delay={300}>
         <section className="relative bg-white flex flex-col justify-center drop-shadow-md w-full p-4 lg:max-w-4xl lg:mx-auto rounded-lg mt-10">
+          <div className="relative flex flex-col w-full justify-center items-center mt-4">
+            <h3 className="font-bold text-2xl uppercase tracking-widest primary-color z-10">
+              acara akan diselenggarakan
+            </h3>
+            <div className="flex flex-col items-center mt-16 mb-4 z-10">
+              <h2 className="font-serif text-5xl primary-color">
+                {timeLeft.days}
+              </h2>
+              <p className="font-bold uppercase">hari</p>
+            </div>
+            <div className="flex justify-evenly w-full items-center mb-16 z-10">
+              <div className="flex flex-col items-center">
+                <h2 className="font-serif text-2xl primary-color">
+                  {timeLeft.hours}
+                </h2>
+                <p className="font-bold uppercase">jam</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <h2 className="font-serif text-2xl primary-color">
+                  {timeLeft.minutes}
+                </h2>
+                <p className="font-bold uppercase">menit</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <h2 className="font-serif text-2xl primary-color">
+                  {timeLeft.seconds}
+                </h2>
+                <p className="font-bold uppercase">detik</p>
+              </div>
+            </div>
+            <div className="absolute inset-0 w-full flex justify-center z-0 ">
+              <img src="/assets/line-01.png" alt="" />
+            </div>
+          </div>
           <div
             className="absolute top-0 left-0"
             style={{ marginLeft: "-16px", marginTop: "-16px" }}
@@ -28,7 +86,7 @@ export default function Event() {
               <span className="mr-1">
                 <img src="/icons/ic_rings.svg" alt="rings" />
               </span>
-              <p className="uppercase tracking-widest primary-color">
+              <p className="uppercase font-bold tracking-widest primary-color">
                 akad nikah
               </p>
             </div>
@@ -65,7 +123,9 @@ export default function Event() {
               <span className="mr-1">
                 <img src="/icons/ic_cheer.svg" alt="cheer" />
               </span>
-              <p className="uppercase tracking-widest primary-color">resepsi</p>
+              <p className="uppercase font-bold tracking-widest primary-color">
+                resepsi
+              </p>
             </div>
           </Fade>
 
