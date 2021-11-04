@@ -12,7 +12,7 @@ export default function GalleryList({ data }) {
   };
 
   return (
-    <section className="relative grid grid-cols-3 gap-4 justify-center items-center">
+    <section className="relative grid grid-cols-3 gap-2 md:gap-4  justify-center items-center">
       {data.map((item, i) => {
         return (
           <Fade key={i} bottom delay={500 * i}>
