@@ -33,7 +33,7 @@ export default function Event() {
       <Fade delay={300}>
         <section className="relative bg-white flex flex-col justify-center drop-shadow-md w-full p-4 lg:max-w-4xl lg:mx-auto rounded-lg mt-10">
           <div className="relative flex flex-col w-full justify-center items-center mt-4">
-            <h3 className="font-bold text-2xl uppercase tracking-widest primary-color z-10">
+            <h3 className="font-bold text-2xl uppercase text-center tracking-widest primary-color z-10">
               acara akan diselenggarakan
             </h3>
             <div className="flex flex-col items-center mt-16 mb-4 z-10">
