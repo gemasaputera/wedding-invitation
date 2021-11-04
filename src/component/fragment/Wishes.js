@@ -148,9 +148,12 @@ export default function Wishes() {
   return (
     <>
       <section
-        className="flex flex-col mt-10"
+        className="relative flex flex-col mt-10"
         style={{ marginLeft: 16, marginRight: 16 }}
       >
+        <div className="absolute left-0 hidden md:block">
+          <img src="/assets/flower-6.png" alt="" />
+        </div>
         <Fade delay={500}>
           <p className="text-center md:w-3/5 md:mx-auto">
             Doa serta dukungan dari Anda bagi pernikahan Iga & Gema sungguh
@@ -188,75 +191,80 @@ export default function Wishes() {
             Kirim harapan dan doa untuk kedua mempelai pasangan
           </p>
         </Fade>
-        <div className="flex flex-col items-start my-4 md:w-3/5 md:mx-auto">
-          <Fade bottom delay={1000}>
-            <div className="flex flex-col w-full mb-4">
-              <label htmlFor="name" className="font-semibold capitalize">
-                your name <span className="text-red-600">*</span>
-              </label>
-              <input
-                name="name"
-                id="name"
-                type="text"
-                value={form.name}
-                className="bg-white rounded-lg p-4"
-                placeholder="Enter your name..."
-                onChange={handleChange}
-              />
-            </div>
-          </Fade>
-          <Fade bottom delay={1300}>
-            <div className="flex flex-col w-full">
-              <label htmlFor="name" className="font-semibold capitalize">
-                your message <span className="text-red-600">*</span>
-              </label>
-              <textarea
-                name="text"
-                id="text"
-                className="bg-white rounded-lg p-4"
-                placeholder="Enter your message..."
-                rows="4"
-                onChange={handleChange}
-                value={form.text}
-              />
-            </div>
-            <div className="w-full">
-              <button
-                type="submit"
-                className={`btn btn-primary uppercase w-full my-4 ${
-                  disabled
-                    ? "disabled:opacity-50 disabled:cursor-not-allowed"
-                    : ""
-                }`}
-                disabled={disabled}
-                onClick={handleSubmit}
-              >
-                {loading ? <Spinner /> : "kirim pesan"}
-              </button>
-            </div>
-          </Fade>
-          <Fade delay={1500}>
-            <div className="flex justify-center mt-8 mb-4 w-full">
-              <p className="font-bold primary-color uppercase tracking-widest">
-                harapan dan doa
-              </p>
-            </div>
-          </Fade>
-          <Fade delay={1800}>
-            <section className="bg-white w-full h-60 p-4 overflow-y-auto overflow-x-hidden">
-              {wishes.length === 0 && (
-                <div className="h-full w-full flex justify-center items-center">
-                  <p className="text-gray-400">
-                    Be the first to give a whises!
-                  </p>
-                </div>
-              )}
-              {wishes.map((wish, i) => {
-                return <ItemWishes key={i} data={wish} />;
-              })}
-            </section>
-          </Fade>
-        </div>
+        <form className="relative" action="">
+          <div className="absolute w-3/5 right-0 bottom-0 hidden md:block">
+            <img src="/assets/flower-9.png" alt="" />
+          </div>
+          <div className="flex flex-col items-start my-4 md:w-3/5 md:mx-auto">
+            <Fade bottom delay={1000}>
+              <div className="flex flex-col w-full mb-4">
+                <label htmlFor="name" className="font-semibold capitalize">
+                  your name <span className="text-red-600">*</span>
+                </label>
+                <input
+                  name="name"
+                  id="name"
+                  type="text"
+                  value={form.name}
+                  className="bg-white rounded-lg p-4"
+                  placeholder="Enter your name..."
+                  onChange={handleChange}
+                />
+              </div>
+            </Fade>
+            <Fade bottom delay={1300}>
+              <div className="flex flex-col w-full">
+                <label htmlFor="name" className="font-semibold capitalize">
+                  your message <span className="text-red-600">*</span>
+                </label>
+                <textarea
+                  name="text"
+                  id="text"
+                  className="bg-white rounded-lg p-4"
+                  placeholder="Enter your message..."
+                  rows="4"
+                  onChange={handleChange}
+                  value={form.text}
+                />
+              </div>
+              <div className="w-full">
+                <button
+                  type="submit"
+                  className={`btn btn-primary uppercase w-full my-4 ${
+                    disabled
+                      ? "disabled:opacity-50 disabled:cursor-not-allowed"
+                      : ""
+                  }`}
+                  disabled={disabled}
+                  onClick={handleSubmit}
+                >
+                  {loading ? <Spinner /> : "kirim pesan"}
+                </button>
+              </div>
+            </Fade>
+            <Fade delay={1500}>
+              <div className="flex justify-center mt-8 mb-4 w-full">
+                <p className="font-bold primary-color uppercase tracking-widest">
+                  harapan dan doa
+                </p>
+              </div>
+            </Fade>
+            <Fade delay={1000}>
+              <section className="bg-white w-full h-60 p-4 overflow-y-auto overflow-x-hidden">
+                {wishes.length === 0 && (
+                  <div className="h-full w-full flex justify-center items-center">
+                    <p className="text-gray-400">
+                      Be the first to give a whises!
+                    </p>
+                  </div>
+                )}
+                {wishes.map((wish, i) => {
+                  return <ItemWishes key={i} data={wish} />;
+                })}
+              </section>
+            </Fade>
+          </div>
+        </form>
       </section>
       {renderDialog()}
     </>

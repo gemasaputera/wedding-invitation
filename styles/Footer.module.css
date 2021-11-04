@@ -1,10 +1,10 @@
 .container {
   background: #fbbda2;
   position: fixed;
-  bottom: 0;
-  left: 0;
   height: 60px;
   width: 100%;
   justify-content: space-around;
   z-index: 40;
+
+  @apply bottom-0 left-0 md:top-0;
 }

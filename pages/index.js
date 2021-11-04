@@ -9,6 +9,7 @@ import Couples from "../src/json/Couples.json";
 import Wishes from "../src/component/fragment/Wishes";
 import Gallery from "../src/component/fragment/Gallery";
 import Event from "../src/component/fragment/Event";
+import Quotes from "../src/component/fragment/Quotes";
 
 export default function Home() {
   const Router = useRouter();
@@ -87,7 +88,10 @@ export default function Home() {
 
   const Home = () => {
     return (
-      <div id="home">
+      <div className="relative" id="home">
+        <div className="absolute right-0 hidden md:block">
+          <img src="/assets/flower-6.png" alt="" />
+        </div>
         <Fade top delay={300}>
           <div className="flex flex-col items-center justify-center">
             <p className="font-serif text-4xl mt-2">
@@ -111,23 +115,16 @@ export default function Home() {
             );
           })}
         </section>
-        {/* <div className="flex justify-center my-10">
-        <Fade bottom delay={500}>
-          <button
-            className="btn btn-primary"
-            onClick={() => Router.push("/event")}
-          >
-            Detail Acara
-          </button>
-        </Fade>
-      </div> */}
       </div>
     );
   };
 
   const EventPart = () => {
     return (
-      <div id="event">
+      <div className="relative" id="event">
+        <div className="absolute left-0 hidden md:block">
+          <img src="/assets/flower-8.png" alt="" />
+        </div>
         <Fade top delay={300}>
           <p className="font-bold uppercase text-base text-center mt-20 md:text-3xl">
             Detail Acara
@@ -140,7 +137,10 @@ export default function Home() {
 
   const GalleryPart = () => {
     return (
-      <div id="gallery">
+      <div className="relative" id="gallery">
+        <div className="absolute right-0 top-0 hidden md:block">
+          <img src="/assets/flower-7.png" alt="" />
+        </div>
         <Fade top delay={300}>
           <p className="font-bold uppercase text-base text-center mt-20 md:text-3xl">
             Gallery
@@ -170,12 +170,13 @@ export default function Home() {
         <title>Wedding Invitation</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="main">
+      <main className="relative main">
         {!open && <OpeningScreen />}
         {open && (
           <Layout>
             <Home />
             <EventPart />
+            <Quotes />
             <GalleryPart />
             <WishesPart />
             <WeddingAnnouncement />

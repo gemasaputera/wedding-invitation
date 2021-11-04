@@ -9,7 +9,7 @@
   height: 38px;
   width: 38px;
 
-  @apply lg:flex-col lg:rounded lg:w-16 lg:h-auto lg:font-bold;
+  @apply lg:flex-col lg:rounded lg:w-16 lg:h-auto lg:font-bold cursor-pointer;
 }
 
 .menuItem:hover {
