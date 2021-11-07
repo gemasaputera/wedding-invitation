@@ -62,7 +62,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex justify-center z-20">
-            <p className="text-white font-bold text-xl 2xl:text-2xl my-5">
+            <p className="text-white text-center font-bold text-xl 2xl:text-2xl my-5">
               {name === "" ? "Tamu Undangan" : name}
             </p>
           </div>
