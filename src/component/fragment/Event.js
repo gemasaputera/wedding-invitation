@@ -7,17 +7,14 @@ export default function Event() {
   const calculateTime = () => {
     let dueDate = new Date("2021-11-21");
     const differentDate = +dueDate - +new Date();
-    const local = differentDate.toLocaleString("id", {
-      timeZone: "Asia/Jakarta",
-    });
     let timeLeft = {};
 
-    if (local > 0) {
+    if (differentDate > 0) {
       timeLeft = {
-        days: Math.floor(local / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((local / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((local / 1000 / 60) % 60),
-        seconds: Math.floor((local / 1000) % 60),
+        days: Math.floor(differentDate / (1000 * 60 * 60 * 24)),
+        hours: Math.floor(((differentDate / (1000 * 60 * 60)) % 24) + 7),
+        minutes: Math.floor((differentDate / 1000 / 60) % 60),
+        seconds: Math.floor((differentDate / 1000) % 60),
       };
     }
 
