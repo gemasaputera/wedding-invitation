@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 
 function GalleryItem({ data, image, onClick }) {
   const handleViewImage = (item) => {
@@ -23,4 +23,4 @@ function GalleryItem({ data, image, onClick }) {
   );
 }
 
-export default memo(GalleryItem);
+export default GalleryItem;
