@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import Dialog from "../parts/Dialog";
 import dataBank from "../../json/BankList.json";
@@ -77,7 +78,7 @@ export default function Wishes() {
     return (
       <div className="flex mb-2">
         <div>
-          <img src="/icons/ic_love_twotone.svg" alt="ic_love_twotone" />
+          <Image src="/icons/ic_love_twotone.svg" alt="ic_love_twotone" />
         </div>
         <div className="flex flex-col flex-1 ml-2">
           <p className="font-semibold" style={{ fontSize: 14 }}>
@@ -119,7 +120,7 @@ export default function Wishes() {
               >
                 <div className="flex justify-between w-full">
                   <div style={{ width: 100 }}>
-                    <img src={item.logo} alt="" />
+                    <Image src={item.logo} alt="" />
                   </div>
                   <button
                     type="button"
@@ -152,7 +153,7 @@ export default function Wishes() {
         style={{ marginLeft: 16, marginRight: 16 }}
       >
         <div className="absolute left-0 hidden md:block">
-          <img src="/assets/flower-6.png" alt="" />
+          <Image src="/assets/flower-6.png" alt="" />
         </div>
         <Fade delay={500}>
           <p className="text-center md:w-3/5 md:mx-auto">
@@ -193,7 +194,7 @@ export default function Wishes() {
         </Fade>
         <form className="relative" action="">
           <div className="absolute w-3/5 right-0 bottom-0 hidden md:block">
-            <img src="/assets/flower-9.png" alt="" />
+            <Image src="/assets/flower-9.png" alt="" />
           </div>
           <div className="flex flex-col items-start my-4 md:w-3/5 md:mx-auto">
             <Fade bottom delay={1000}>

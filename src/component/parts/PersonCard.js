@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function PersonCard({ reverse, data }) {
   return (
@@ -9,7 +10,7 @@ export default function PersonCard({ reverse, data }) {
     >
       <div className="md:flex md:flex-col md:justify-center md:items-center">
         <div className="w-24 h-24 md:w-40 md:h-40 md:bg-gray-200 md:rounded-full md:p-2">
-          <img src={data.img} alt={data.name} />
+          <Image src={data.img} alt={data.name} priority />
         </div>
         <div className="flex justify-evenly mt-3">
           {data.social.map((item, i) => {
@@ -20,7 +21,7 @@ export default function PersonCard({ reverse, data }) {
                 target="_blank"
                 key={item.name}
               >
-                <img
+                <Image
                   className=" w-4 h-4 md:w-6 md:h-6"
                   src={item.icon}
                   alt={item.name}

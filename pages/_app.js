@@ -5,18 +5,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <link
-          rel="preload"
-          href="/fonts/BalletHarmony.ttf"
-          as="font"
-          crossOrigin=""
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, user-scalable=no"
         />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-          as="font"
-          crossOrigin=""
-        />
+        <link rel="preload" src="/images/background.webp" />
+        <link rel="preload" src="/images/profile-1.webp" />
+        <link rel="preload" src="/images/profile-2.webp" />
       </Head>
       <Component {...pageProps} />
     </>

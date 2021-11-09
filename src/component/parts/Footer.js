@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { animateScroll as scroll } from "react-scroll";
 import styles from "../../../styles/Footer.module.css";
 import styleMenu from "../../../styles/MenuItem.module.css";
@@ -12,7 +13,7 @@ export default function Footer() {
   return (
     <div className={`${styles.container} flex items-center`}>
       <button className={styleMenu.menuItem} onClick={handleClick}>
-        <img src="/icons/ic_home.svg" alt="Home" />
+        <Image src="/icons/ic_home.svg" alt="Home" />
         <p className="capitalize hidden lg:block">Home</p>
       </button>
       {Menu.map((menu, i) => {
