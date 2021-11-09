@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import Fade from "react-reveal/Fade";
-import Dialog from "./Dialog";
 const GalleryItem = dynamic(() => import("./GalleryItem"));
+const Dialog = dynamic(() => import("./Dialog"));
 
 export default function GalleryList({ data }) {
   const [item, setItem] = useState(null);
