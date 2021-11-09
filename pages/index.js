@@ -5,12 +5,14 @@ import Fade from "react-reveal/Fade";
 import { useRouter } from "next/router";
 import Layout from "../src/component/parts/Layout";
 import PersonCard from "../src/component/parts/PersonCard";
-import WeddingAnnouncement from "../src/component/parts/WeddingAnnouncement";
 import Couples from "../src/json/Couples.json";
 const Event = dynamic(() => import("../src/component/fragment/Event"));
 const Wishes = dynamic(() => import("../src/component/fragment/Wishes"));
 const Quotes = dynamic(() => import("../src/component/fragment/Quotes"));
 const Gallery = dynamic(() => import("../src/component/fragment/Gallery"));
+const WeddingAnnouncement = dynamic(() =>
+  import("../src/component/parts/WeddingAnnouncement")
+);
 
 export default function Home() {
   const Router = useRouter();
