@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Fade from "react-reveal/Fade";
 import Dialog from "./Dialog";
 import GalleryItem from "./GalleryItem";
@@ -30,7 +29,7 @@ export default function GalleryList({ data }) {
         <Dialog open={open} onClose={() => setOpen(false)} auto>
           <div className="flex justify-center w-full max-h-96">
             <div className="flex justify-center w-full">
-              <Image src={item.imgUrl} alt={item.id} className="h-full" />
+              <img src={item.imgUrl} alt={item.id} className="h-full" />
             </div>
           </div>
         </Dialog>

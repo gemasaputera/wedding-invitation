@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import React, { useState, useEffect } from "react";
 import Fade from "react-reveal/Fade";
@@ -92,7 +91,7 @@ export default function Home() {
     return (
       <div className="relative" id="home">
         <div className="absolute right-0 hidden md:block">
-          <Image src="/assets/flower-6.png" alt="" />
+          <img src="/assets/flower-6.png" alt="" />
         </div>
         <Fade top delay={300}>
           <div className="flex flex-col items-center justify-center">
@@ -125,7 +124,7 @@ export default function Home() {
     return (
       <div className="relative" id="event">
         <div className="absolute left-0 hidden md:block">
-          <Image src="/assets/flower-8.png" alt="" />
+          <img src="/assets/flower-8.png" alt="" />
         </div>
         <Fade top delay={300}>
           <p className="font-bold uppercase text-base text-center mt-20 md:text-3xl">
@@ -141,7 +140,7 @@ export default function Home() {
     return (
       <div className="relative" id="gallery">
         <div className="absolute right-0 top-0 hidden md:block">
-          <Image src="/assets/flower-7.png" alt="" />
+          <img src="/assets/flower-7.png" alt="" />
         </div>
         <Fade top delay={300}>
           <p className="font-bold uppercase text-base text-center mt-20 md:text-3xl">

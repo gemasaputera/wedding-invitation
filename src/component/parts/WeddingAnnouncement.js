@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 export default function WeddingAnnouncement() {
   return (
@@ -23,7 +22,7 @@ export default function WeddingAnnouncement() {
         </span>
       </p>
       <div>
-        <Image className="mb-3" src="/assets/flower-2.png" alt="" />
+        <img className="mb-3" src="/assets/flower-2.png" alt="" />
       </div>
     </div>
   );

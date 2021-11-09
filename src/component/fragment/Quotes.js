@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 
 export default function Quotes() {
   return (
     <section className="relative flex justify-center md:w-3/5 mx-auto mt-16">
       <div className="absolute inset-0 w-full flex justify-center z-0 ">
-        <Image src="/assets/line-01.png" alt="" />
+        <img src="/assets/line-01.png" alt="" />
       </div>
       <div className="z-10">
         <p className="text-center italic">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
 import styles from "../../../styles/Layout.module.css";
 import Footer from "./Footer";
 
@@ -40,7 +39,7 @@ export default function Layout({ children }) {
         onClick={handleAudio}
         className="fixed flex justify-center items-center left-2 top-4 md:top-20 md:left-16 bg-white drop-shadow-lg rounded-full w-10 h-10 z-40 cursor-pointer hover:bg-gray-200"
       >
-        <Image
+        <img
           src={`/icons/${playMusic ? "ic_music.svg" : "ic_music_off.svg"}`}
           alt="Music Control"
         />
@@ -53,7 +52,7 @@ export default function Layout({ children }) {
       <div className="relative pb-16">
         <ControlAudio />
         <div className="flex justify-center md:mt-12">
-          <Image src="/assets/flower-1.png" width={285} alt="flower" />
+          <img src="/assets/flower-1.png" width={285} alt="flower" />
         </div>
         <div className={`${styles.container} flex flex-col items-center`}>
           <section className="container mx-auto">{children}</section>
