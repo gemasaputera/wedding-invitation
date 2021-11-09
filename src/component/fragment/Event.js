@@ -5,14 +5,21 @@ import dataResepsi from "../../json/DataResepsi.json";
 
 export default function Event() {
   const calculateTime = () => {
-    let dueDate = new Date("2021-11-21");
-    const differentDate = +dueDate - +new Date();
+    let dueDate = new Date("2021-11-21 08:00:00 GMT+0700 (Indochina Time)");
+    const d = new Date();
+
+    const localTime = d.getTime();
+
+    const localOffset = d.getTimezoneOffset() * 60000;
+
+    const utc = localTime + localOffset;
+    const differentDate = +dueDate - +utc;
     let timeLeft = {};
 
     if (differentDate > 0) {
       timeLeft = {
         days: Math.floor(differentDate / (1000 * 60 * 60 * 24)),
-        hours: Math.floor(((differentDate / (1000 * 60 * 60)) % 24) + 7),
+        hours: Math.floor((differentDate / (1000 * 60 * 60)) % 24),
         minutes: Math.floor((differentDate / 1000 / 60) % 60),
         seconds: Math.floor((differentDate / 1000) % 60),
       };
