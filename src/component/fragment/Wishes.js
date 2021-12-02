@@ -19,10 +19,10 @@ export default function Wishes() {
     text: "",
   });
   const [disabled, setDisabled] = useState(true);
-  const [address] =
-    useState(`Komplek Departemen Agama, jalan walisongo 1 Blok A No. 48
-  RT01/RW015, Desa Pabuaran (gang smp muhammadiyah, rumah warung)
-  KAB. BOGOR - BOJONGGEDE JAWA BARAT ID 16921`);
+  // const [address] =
+  //   useState(`Komplek Departemen Agama, jalan walisongo 1 Blok A No. 48
+  // RT01/RW015, Desa Pabuaran (gang smp muhammadiyah, rumah warung)
+  // KAB. BOGOR - BOJONGGEDE JAWA BARAT ID 16921`);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [wishes, setWishes] = useState([]);
@@ -96,7 +96,7 @@ export default function Wishes() {
     return (
       <Dialog open={open} onClose={() => setOpen(false)}>
         <section className="grid grid-cols-1 md:grid-cols-3 gap-4 p-1">
-          <div className="bg-white flex flex-col rounded-lg drop-shadow-lg p-2">
+          {/* <div className="bg-white flex flex-col rounded-lg drop-shadow-lg p-2">
             <div className="flex justify-between items-center">
               <p className="font-semibold">Alamat:</p>
               <button
@@ -110,7 +110,7 @@ export default function Wishes() {
             <div className="mt-8">
               <p className="text-sm text-gray-500">{address}</p>
             </div>
-          </div>
+          </div> */}
           {dataBank.map((item, i) => {
             return (
               <div
